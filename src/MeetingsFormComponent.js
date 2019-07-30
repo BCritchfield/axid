@@ -1,5 +1,6 @@
 import React from 'react';
-import Airtable from 'airtable';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDumbbell, faGifts, faFemale, faCookieBite} from '@fortawesome/free-solid-svg-icons';
 import './MeetingsFormComponent.css';
 
 export default class MeetingsFormComponent extends React.Component {
@@ -129,11 +130,11 @@ render(){
 		'sexi': 'Stories!',
 	}
 
-	const imgSrcs = {
-		'dum': 'https://www.iconsdb.com/icons/preview/white/dumbbell-xxl.png',
-		'sup': 'https://www.iconsdb.com/icons/preview/white/bra-xxl.png',
-		'smart': 'https://www.targetis.co.uk/app/uploads/2014/09/icon-cookie.png',
-		'sexi': 'https://www.iconsdb.com/icons/preview/white/woman-xxl.png',
+	const icons = {
+		'dum': faDumbbell,
+		'sup': faGifts,
+		'smart': faCookieBite,
+		'sexi': faFemale,
 	}
 
 	const submits = {
@@ -149,12 +150,12 @@ render(){
 	<div className='dums'>
 		<div>
         	<h2 className={'weekHeader ' + this.props.type} >{header}</h2>
-        	<img alt="icon" src={imgSrcs[this.props.type]} height='50px' />
+        	<FontAwesomeIcon style={{margin: '5px'}} icon={icons[this.props.type]} />
         </div>
         <div className='bottomBorderWhite' />
         <div className='topPadding'>
 			<label htmlFor="inp" className="inp">
-  				<input value={this.state.fieldOne} onChange={this.handleFieldOneChange} type="text" className="inp" autoComplete="off" id="inp" placeholder={this.props.type !== 'sexi'? "Your name (optional)" : 'Questions!'} />
+  				<input value={fieldOne} onChange={this.handleFieldOneChange} type="text" className="inp" autoComplete="off" id="inp" placeholder={this.props.type !== 'sexi'? "Your name (optional)" : 'Questions!'} />
 			</label>
         </div>
         <div className='topPadding'>
