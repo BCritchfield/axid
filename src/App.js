@@ -82,7 +82,6 @@ class App extends Component {
       return <div>Loading....</div>;
     }
     return (
-
       <div className="App module">
 
       <h1>19F Soshul</h1>

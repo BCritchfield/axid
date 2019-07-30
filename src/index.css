@@ -5,7 +5,7 @@ body {
   font-family: sans-serif;
   background-color: #101225;
   color: white;
-
+  max-width: 100vw;
     border-style: solid;
     border-width: 6px;
 
@@ -49,7 +49,8 @@ body {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: space-between;
+	align-items: space-around;
+	justify-content: center;
 
 }
 
@@ -144,6 +145,14 @@ h1 {
 
 }
 
+.visibleOnBigOnly{
+	visibility: visible;
+}
+.visibleOnSmallOnly{
+	visibility: hidden;
+}
+
+
 
 
 
@@ -172,7 +181,13 @@ h1 {
 
 
 	}
-	
+
+	.visibleOnSmallOnly{
+		visibility: visible;
+	}
+	.visibleOnBigOnly{
+		visibility: hidden;
+	}
 }
 
 

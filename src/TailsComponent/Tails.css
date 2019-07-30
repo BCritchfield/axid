@@ -1,6 +1,6 @@
-.hoverIcon{
-	color: lightgrey;
-}
-.hoverIcon:hover{
-	color: #101225;
+
+.hoverBold:hover{
+	font-weight:bold;
+	cursor: pointer;
+	color: pink;
 }

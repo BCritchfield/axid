@@ -149,7 +149,7 @@ render(){
 	<div className='dums'>
 		<div>
         	<h2 className={'weekHeader ' + this.props.type} >{header}</h2>
-        	<img src={imgSrcs[this.props.type]} height='50px' />
+        	<img alt="icon" src={imgSrcs[this.props.type]} height='50px' />
         </div>
         <div className='bottomBorderWhite' />
         <div className='topPadding'>

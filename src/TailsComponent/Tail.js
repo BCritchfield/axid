@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLightbulb, faTimes} from '@fortawesome/free-solid-svg-icons';
+import { faTimes} from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
 
 import './Tails.css';
@@ -16,6 +16,7 @@ export default class Tail extends Component {
 	}
 
 	render(){
+
     	const dayNames = {
       		M: 'Monday',
       		T: 'Tuesday',
@@ -26,7 +27,8 @@ export default class Tail extends Component {
       		U: 'Sunday',
    		};
 
-   		const tail = this.props.tail
+   		const tail = this.props.tail;
+      const icon = tail.Icon || "https://image.flaticon.com/icons/svg/54/54591.svg";
    		const customStyles = {
   			content : {
   				textAlign: 'center',
@@ -51,52 +53,38 @@ export default class Tail extends Component {
 		};
 
 		return(
-               <div className={this.props.last ? 'day' : 'day vertWhite'}>
-                  <p className="dayName" onClick={()=>{this.setState({modalOpen: true})}}>
+               <div className={(this.props.last ? 'day ' : 'day vertWhite ') + (tail.Info || tail.Theme ? 'hoverBold': '')}>
+                  <p className="hoverIcon dayName" onClick={()=>{this.setState({modalOpen: true})}}>
                     {dayNames[tail.Day]}
-                    {tail.Info ?
-                    	<span> <FontAwesomeIcon  className="hoverIcon" icon={faLightbulb} /></span>
-                    :
-                    	<div />
-                    }
                   </p>
-                  <p>{tail.Description}</p>
-                  <p>{tail.Theme === undefined ? '' : 'Theme: '}</p>
-                  <p>{tail.Theme}</p>
-                  <img style={{marginTop: '10px'}} alt="test" src="https://image.flaticon.com/icons/svg/1086/1086426.svg" height="80px" />
+                  <p onClick={()=>{this.setState({modalOpen: true})}}>{tail.Description}</p>
+{/*                  <p>{tail.Theme === undefined ? '' : 'Theme: '}</p>
+                  <p>{tail.Theme}</p>*/}
+                  <img onClick={()=>{this.setState({modalOpen: true})}} style={{marginTop: '10px'}} alt="test" src={icon} height="80px" />
 					<Modal 
-           				isOpen={this.state.modalOpen}
+           				isOpen={this.state.modalOpen && (tail.Info || tail.Theme)}
            				contentLabel="Minimal Modal Example"
            				shouldCloseOnOverlayClick={true}
            				style={customStyles}
 
 
         			>
-        			<div style={{display: 'flex', alignItems: 'flex-start'}}>
-        			<div>
+        			<div style={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems: 'space-between'}}>
+       			   {tail.Info ? (<div>
            				<p style={{fontWeight:'600', margin: '0'}}>More Info:</p>
-           				<p>House @ 8pm - come through for drinks and sisterhood!</p>
-           			</div>
+           				<p>{tail.Info}</p>
+           			</div>) : <div />
+                  }
+                 {tail.Theme ? (<div>
+                  <p style={{fontWeight:'600', margin: '0'}}>Theme:</p>
+                  <p>{tail.Theme}</p>
+                </div>) : <div />
+                  }
+                  <div>
           			<FontAwesomeIcon icon={faTimes} onClick={()=>{this.setState({modalOpen: false})}} />
-        			</div>
+        			   </div>
+              </div>
         		</Modal>
-
-
-				<Modal 
-           				isOpen={this.state.signUpModalOpen}
-           				contentLabel="Minimal Modal Example"
-           				shouldCloseOnOverlayClick={true}
-           				style={customStyles}
-        		>
-        			<div style={{display: 'flex', alignItems: 'flex-start'}}>
-        			<div>
-           				<p style={{fontWeight:'600', margin: '0'}}>Sign Ups For {this.props.singUpSheeetName}</p>
-           				<p>House @ 8pm - come through for drinks and sisterhood!</p>
-           			</div>
-          			<FontAwesomeIcon icon={faTimes} onClick={()=>{this.setState({signUpModalOpen: false})}} />
-        			</div>
-        		</Modal>
-
 
                 </div>
 			)
