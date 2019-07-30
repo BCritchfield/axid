@@ -1,13 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Lobster|Monoton|Nunito+Sans:200,200i,300,300i,400|Oxygen:300,400|Poiret+One|Righteous|Work+Sans:100,200,300,400&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 40px;
+  font-family: sans-serif;
+  background-color: #101225;
+  color: white;
+
+    border-style: solid;
+    border-width: 6px;
+
+ border-image: linear-gradient(to left, #01EDFF, #8174EE, #ff0161) 
+              100% 0 0 0/10px 0 0 0 stretch;
+   font-size: 28px;
+   font-family: 'Work Sans', sans-serif;
+   font-weight: 300;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.calendar{
+	background-color: #8174EE;
+	margin-bottom: 80px;
+
+
 }
+
+.weekHeader{
+	padding:6px;
+	margin: 0 0 0 6px;
+	
+	font-weight: 300;
+	text-align: center;
+
+}
+
+.bottomBorderWhite{
+	border-bottom: 2px solid white;
+}
+
+.days{
+	display: flex;
+	padding: 20px 0;
+}
+
+
+.day{
+
+	padding: 0 20px ;
+
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
+
+}
+
+.day p{
+	padding: 0px;
+	margin: 0px;
+	font-size: 28px;
+	align-self: stretch;
+	flex: 1;
+
+}
+h1 {
+	font-family: 'Poiret One', cursive;
+	font-size: 120px;
+	margin-bottom: 0;
+	margin-top: 0;
+	
+}
+
+.vertWhite{
+	border-right: 1px solid white;
+
+	align-self: stretch;
+}
+
+.dayName{
+	font-weight: 600;
+	margin-bottom: 10px !important;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+
+.overlay{
+	filter:alpha(opacity=50);
+	opacity: 0.5;
+}
+
+.active{
+	box-shadow:
+
+
+
+
+    inset  -4px 0 20px #fff
+}
+
+.menu{
+	display: flex;
+	align-items: space-between;
+	justify-content: space-around;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+.menu > p:hover{
+	color: lightgrey;
+}
+
+.bottomPadding{
+	padding-bottom: 5px;
+	border-style:solid;
+	border-width: 3px;
+	border-color: transparent;
+}
+
+.gradientText{
+              
+
+  border-style: solid;
+    border-width: 6px;
+
+
+ border-image: linear-gradient(to left, #01EDFF, #8174EE, #ff0161) 
+              100% 0 1 0/0px 0 1 0 stretch;
+}
+
+
+.pageCenter{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+
+.close-button{
+	color: #8174EE;
+	background-color: white;
+	border: none;
+	padding: 10px;
+	font-size: 16px;
+
+}
+
+
+
+
+/*mobile styles*/
+@media only screen and (max-width: 600px) {
+	.days{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.day{
+		padding: 20px 0;
+
+	}
+
+	.vertWhite{
+		border: none;
+		border-bottom: 1px solid white;
+	}
+
+	.menu{
+		flex-direction: column;
+	}
+
+	.menu *{
+
+
+	}
+	
+}
+
+
+
+

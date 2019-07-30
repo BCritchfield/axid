@@ -1,0 +1,75 @@
+
+.dums{
+	background-color: #8174EE;
+
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
+	justify-content: space-between;
+	max-width: 600px;
+	min-width: 350px;
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+.dumdumHead{
+	color: white;
+}
+
+.emphasis{
+	color: #8174EE;
+	font-size: 36px;
+	font-weight: 600;
+	font-style: italic;
+}
+
+
+
+.submitButton{
+  background-color: white;	
+  border: none;
+  color: #8174EE;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  margin: 40px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.inp{
+	background-color: #8174EE;
+	opacity: 50%;
+	border: none;
+	border-bottom: 2px solid white;
+	padding: 10px 10px 4px 4px;
+	color: white;
+	font-size: 24px;
+	padding-top: 10px;
+} 
+
+.inp:focus{
+	outline: none;
+	color: white;
+}
+
+.topPadding{
+	margin-top: 20px;
+}
+
+::placeholder{
+	color: lightgrey;
+}
+
+.submitted{
+	color: #47c954;
+	font-weight: 600;
+	border: 1px solid lightgreen;
+	visibility:;
+}
+
+
+
