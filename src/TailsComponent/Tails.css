@@ -2,5 +2,12 @@
 .hoverBold:hover{
 	font-weight:bold;
 	cursor: pointer;
-	color: pink;
+	color: #171A29;
+	text-decoration: underline;
+}
+
+.hoverBold{
+	color: lightgrey;
+	font-size: 16px;
+
 }

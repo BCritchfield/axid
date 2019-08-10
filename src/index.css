@@ -152,6 +152,24 @@ h1 {
 	visibility: hidden;
 }
 
+.mobileMenu{
+	display: flex;
+	align-items: space-around;
+	justify-content: space-around;
+	margin: 20px;
+
+}
+
+.mobileMenu *{
+	 background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.activeMobileIcon{
+	color: darkgray;
+}
+
 
 
 
@@ -174,13 +192,9 @@ h1 {
 	}
 
 	.menu{
-		flex-direction: column;
+		display: none;
 	}
 
-	.menu *{
-
-
-	}
 
 	.visibleOnSmallOnly{
 		visibility: visible;
@@ -188,7 +202,19 @@ h1 {
 	.visibleOnBigOnly{
 		visibility: hidden;
 	}
+
+	.days{
+		padding: 0;
+	}
 }
+
+@media only screen and (min-width: 600px){
+	.mobileMenu{
+		display: none;
+	}
+}
+
+
 
 
 

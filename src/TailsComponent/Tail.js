@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes} from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
-
 import './Tails.css';
+
+
 
 
 export default class Tail extends Component {
@@ -12,8 +13,16 @@ export default class Tail extends Component {
 		this.state = {
 			modalOpen: false,
 			signUpModalOpen: false,
+      tooltipOpen: false,
 		}
+    this.toggle=this.toggle.bind(this);
 	}
+
+    toggle() {
+    this.setState({
+      tooltipOpen: !this.state.tooltipOpen
+    });
+  }
 
 	render(){
 
@@ -53,15 +62,22 @@ export default class Tail extends Component {
 		};
 
 		return(
-               <div className={(this.props.last ? 'day ' : 'day vertWhite ') + (tail.Info || tail.Theme ? 'hoverBold': '')}>
+               <div className={(this.props.last ? 'day ' : 'day vertWhite ') + (tail.Info || tail.Theme ? '': '')}>
+                        <div>
+
+      </div>
                   <p className="hoverIcon dayName" onClick={()=>{this.setState({modalOpen: true})}}>
                     {dayNames[tail.Day]}
+
+                    <div  className="hoverBold">See Details</div>
                   </p>
                   <p onClick={()=>{this.setState({modalOpen: true})}}>{tail.Description}</p>
 {/*                  <p>{tail.Theme === undefined ? '' : 'Theme: '}</p>
                   <p>{tail.Theme}</p>*/}
+
                   <img onClick={()=>{this.setState({modalOpen: true})}} style={{marginTop: '10px'}} alt="test" src={icon} height="80px" />
-					<Modal 
+				
+          <Modal 
            				isOpen={this.state.modalOpen && (tail.Info || tail.Theme)}
            				contentLabel="Minimal Modal Example"
            				shouldCloseOnOverlayClick={true}

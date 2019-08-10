@@ -4,6 +4,8 @@ import Airtable from 'airtable';
 import './App.css';
 import Week from './WeekComponent';
 import MeetingsFormComponent from './MeetingsFormComponent';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes, faCocktail, faCalendarAlt, faScroll } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   constructor() {
@@ -85,7 +87,7 @@ class App extends Component {
       <div className="App module">
 
       <h1>19F Soshul</h1>
-      <div className="menu">
+      <div className="menu visibleOnBigOnly">
       <p
       onClick={() => { this.setState({ activePage: 'Social' }); }}
       className={this.state.activePage === 'Social' ? 'gradientText bottomPadding' : 'bottomPadding'}
@@ -99,17 +101,28 @@ class App extends Component {
       Meetings Forms
       </p>
       <p
-      onClick={() => { this.setState({ activePage: 'Programming' }); }}
-      className={this.state.activePage === 'Programming' ? 'gradientText bottomPadding' : 'bottomPadding'}
-      >
-      Programming Calendar
-      </p>
-      <p
       onClick={() => { this.setState({ activePage: 'fullcal' }); }}
       className={this.state.activePage === 'fullcal' ? 'gradientText bottomPadding' : 'bottomPadding'}
       >
       Full Calendar
       </p>
+      </div>
+
+      <div className="mobileMenu">
+
+        <FontAwesomeIcon 
+          className={this.state.activePage === 'Social' ? 'mobileIcon activeMobileIcon' : 'mobileIcon'}
+          onClick={() => { this.setState({ activePage: 'Social' }); }}
+          icon={faCocktail}/>
+        <FontAwesomeIcon 
+          className={this.state.activePage === 'Meetings' ? 'mobileIcon activeMobileIcon' : 'mobileIcon'}
+          onClick={() => { this.setState({ activePage: 'Meetings' }); }}
+          icon={faScroll} />
+        <FontAwesomeIcon 
+          className={this.state.activePage === 'fullcal' ? 'mobileIcon activeMobileIcon' : 'mobileIcon'}
+          onClick={() => { this.setState({ activePage: 'fullcal' }); }}
+          icon={faCalendarAlt}  />
+
       </div>
 
       { this.state.activePage === 'Social'
@@ -136,7 +149,8 @@ class App extends Component {
   }
 
     {this.state.activePage === 'fullcal'
-      ? <div style = {{backgroundColor: 'white', padding: '20px', display: 'flex'}} ><iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=dDhjZGZobW5qNTdndWQyMHNpOHAxMm01dXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%233F51B5&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" style={{borderWidth:'0'}} width="800" height="600" frameBorder="0" scrolling="no"></iframe></div>
+      ? <div style = {{backgroundColor: 'white', padding: '20px', display: 'flex', alignItems: 'center', justifyContent:'center'}} >
+      <iframe title="fullcal" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=dDhjZGZobW5qNTdndWQyMHNpOHAxMm01dXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%233F51B5&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" style={{borderWidth:'0'}} width="800" height="600" frameBorder="0" scrolling="no"></iframe></div>
       : <div />
     }
 
