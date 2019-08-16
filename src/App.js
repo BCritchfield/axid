@@ -4,8 +4,9 @@ import Airtable from 'airtable';
 import './App.css';
 import Week from './WeekComponent';
 import MeetingsFormComponent from './MeetingsFormComponent';
+import ProgrammingCal from './ProgrammingCal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faCocktail, faCalendarAlt, faScroll } from '@fortawesome/free-solid-svg-icons';
+import { faCocktail, faCalendarAlt, faScroll } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   constructor() {
@@ -32,7 +33,7 @@ class App extends Component {
     var Airtable = require('airtable');
     var base = new Airtable({apiKey: 'keynt5FoAUoc3bIBd'}).base('appAVKG5HMWYrRrj5');
 
-    let test = base('Imported table').find('recPJRCgKjwbembVo', (err, record)=> {
+    base('Imported table').find('recPJRCgKjwbembVo', (err, record)=> {
       if (err) { console.error(err); return; }
 
       this.setState({currWeek: record.fields.Current})
@@ -86,7 +87,7 @@ class App extends Component {
     return (
       <div className="App module">
 
-      <h1>19F Soshul</h1>
+      <h1>AXiD 19F</h1>
       <div className="menu visibleOnBigOnly">
       <p
       onClick={() => { this.setState({ activePage: 'Social' }); }}
@@ -99,6 +100,12 @@ class App extends Component {
       className={this.state.activePage === 'Meetings' ? 'gradientText bottomPadding' : 'bottomPadding'}
       >
       Meetings Forms
+      </p>
+      <p
+      onClick={() => { this.setState({ activePage: 'Programming' }); }}
+      className={this.state.activePage === 'Programming' ? 'gradientText bottomPadding' : 'bottomPadding'}
+      >
+      Programming Calendar
       </p>
       <p
       onClick={() => { this.setState({ activePage: 'fullcal' }); }}
@@ -147,6 +154,10 @@ class App extends Component {
       </div>
     : <div />
   }
+    {this.state.activePage==='Programming'
+    ? <div style={{fontWeight:'100', marginTop: '20px'}}> Coming soon! Keep an eye out for an email from Andrea</div>
+    : <div />
+    }
 
     {this.state.activePage === 'fullcal'
       ? <div style = {{backgroundColor: 'white', padding: '20px', display: 'flex', alignItems: 'center', justifyContent:'center'}} >
