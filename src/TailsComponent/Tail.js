@@ -37,7 +37,7 @@ export default class Tail extends Component {
    		};
 
    		const tail = this.props.tail;
-      const icon = tail.Icon || "https://image.flaticon.com/icons/svg/54/54591.svg";
+      const icon = tail.Icon || "https://upload.wikimedia.org/wikipedia/commons/d/d2/Blank.png";
    		const customStyles = {
   			content : {
   				textAlign: 'center',
@@ -94,6 +94,12 @@ export default class Tail extends Component {
                  {tail.Theme ? (<div>
                   <p style={{fontWeight:'600', margin: '0'}}>Theme:</p>
                   <p>{tail.Theme}</p>
+                </div>) : <div />
+                  }
+                    {tail.SignUpLink ? (<div>
+                  <p style={{fontWeight:'600', margin: '0', marginBottom: '20px'}}><a className='signUp' href={tail.SignUpLink}>Sign Up!</a></p>
+                  
+
                 </div>) : <div />
                   }
                   <div>

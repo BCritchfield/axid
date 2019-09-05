@@ -87,7 +87,7 @@ class App extends Component {
     return (
       <div className="App module">
 
-      <h1>AXiD 19F</h1>
+      <h1>AXID 19F</h1>
       <div className="menu visibleOnBigOnly">
       <p
       onClick={() => { this.setState({ activePage: 'Social' }); }}
@@ -155,7 +155,7 @@ class App extends Component {
     : <div />
   }
     {this.state.activePage==='Programming'
-    ? <div style={{fontWeight:'100', marginTop: '20px'}}> Coming soon! Keep an eye out for an email from Andrea</div>
+    ? <ProgrammingCal />
     : <div />
     }
 
