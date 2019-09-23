@@ -10,7 +10,7 @@ class ProgrammingCal extends Component {
     this.state = {
       data: [],
       tails: [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
-      currWeek: 0,
+      currWeek: 2,
     };
 
     this.sortData = this.sortData.bind(this);
@@ -88,7 +88,7 @@ class ProgrammingCal extends Component {
       <div>
      { (Object.values(this.state.tails).map((week) => {
         let active = false;
-        if (week[0] && week[0].Week === this.state.currWeek) {
+        if (week[0] && week[0].Week === '2') {
           active = true;
         }
         return <Week tails={week} active={active} />;

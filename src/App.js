@@ -14,30 +14,17 @@ class App extends Component {
     this.state = {
       data: [],
       tails: [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
-      currWeek: 0,
+      currWeek: '2',
       activePage: 'Social',
     };
 
     this.sortData = this.sortData.bind(this);
-    this.getCurrentWeek = this.getCurrentWeek.bind(this);
     this.getBase = this.getBase.bind(this);
   }
 
   componentDidMount() {
     this.getBase();
     this.setState({});
-
-  }
-
-  getCurrentWeek(){
-    var Airtable = require('airtable');
-    var base = new Airtable({apiKey: 'keynt5FoAUoc3bIBd'}).base('appAVKG5HMWYrRrj5');
-
-    base('Imported table').find('recPJRCgKjwbembVo', (err, record)=> {
-      if (err) { console.error(err); return; }
-
-      this.setState({currWeek: record.fields.Current})
-    });
 
   }
 
@@ -52,9 +39,6 @@ class App extends Component {
     })
     .then(()=>{
       this.sortData();
-    })
-    .then(()=>{
-      this.getCurrentWeek();
     })
     .catch((err) => {
       console.log('error');
@@ -137,6 +121,7 @@ class App extends Component {
         let active = false;
         console.log('week');
         console.log(week);
+
         if (week[0] && week[0].Week === this.state.currWeek) {
           active = true;
         }
