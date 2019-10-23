@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       data: [],
       tails: [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
-      currWeek: '5',
+      currWeek: '6',
       activePage: 'Social',
     };
 

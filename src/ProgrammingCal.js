@@ -88,7 +88,7 @@ class ProgrammingCal extends Component {
       <div>
      { (Object.values(this.state.tails).map((week) => {
         let active = false;
-        if (week[0] && week[0].Week === '5') {
+        if (week[0] && week[0].Week === '6') {
           active = true;
         }
         return <Week tails={week} active={active} />;
