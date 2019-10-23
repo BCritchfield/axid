@@ -6,7 +6,7 @@ import Week from './WeekComponent';
 import MeetingsFormComponent from './MeetingsFormComponent';
 import ProgrammingCal from './ProgrammingCal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCocktail, faCalendarAlt, faScroll } from '@fortawesome/free-solid-svg-icons';
+import { faCocktail, faCalendarAlt, faScroll, faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   constructor() {
@@ -105,6 +105,10 @@ class App extends Component {
           className={this.state.activePage === 'Social' ? 'mobileIcon activeMobileIcon' : 'mobileIcon'}
           onClick={() => { this.setState({ activePage: 'Social' }); }}
           icon={faCocktail}/>
+        <FontAwesomeIcon 
+          className={this.state.activePage === 'Programming' ? 'mobileIcon activeMobileIcon' : 'mobileIcon'}
+          onClick={() => { this.setState({ activePage: 'Programming' }); }}
+          icon={faPizzaSlice}/>
         <FontAwesomeIcon 
           className={this.state.activePage === 'Meetings' ? 'mobileIcon activeMobileIcon' : 'mobileIcon'}
           onClick={() => { this.setState({ activePage: 'Meetings' }); }}
