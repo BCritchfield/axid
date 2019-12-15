@@ -74,9 +74,10 @@ export default class Tail extends Component {
                   <p onClick={()=>{this.setState({modalOpen: true})}}>{tail.Description}</p>
 {/*                  <p>{tail.Theme === undefined ? '' : 'Theme: '}</p>
                   <p>{tail.Theme}</p>*/}
+                  <div>
+                    <img onClick={()=>{this.setState({modalOpen: true})}} style={{marginTop: '10px', width: '80px', height: '80px'}} alt="test" src={icon}/>
+				          </div>
 
-                  <img onClick={()=>{this.setState({modalOpen: true})}} style={{marginTop: '10px'}} alt="test" src={icon} height="80px" />
-				
           <Modal 
            				isOpen={this.state.modalOpen && (tail.Info || tail.Theme)}
            				contentLabel="Minimal Modal Example"
@@ -102,8 +103,8 @@ export default class Tail extends Component {
 
                 </div>) : <div />
                   }
-                  <div>
-          			<FontAwesomeIcon icon={faTimes} onClick={()=>{this.setState({modalOpen: false})}} />
+                  <div class="tailsIcon" >
+          			   <FontAwesomeIcon icon={faTimes} onClick={()=>{this.setState({modalOpen: false})}} />
         			   </div>
               </div>
         		</Modal>

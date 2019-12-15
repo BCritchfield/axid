@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       data: [],
       tails: [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
-      currWeek: '6',
+      currWeek: '1',
       activePage: 'Social',
     };
 
@@ -71,25 +71,13 @@ class App extends Component {
     return (
       <div className="App module">
 
-      <h1>AXID 19F</h1>
+      <h1>AXID 20W</h1>
       <div className="menu visibleOnBigOnly">
       <p
       onClick={() => { this.setState({ activePage: 'Social' }); }}
       className={this.state.activePage === 'Social' ? 'gradientText bottomPadding' : 'bottomPadding'}
       >
       Social Calendar
-      </p>
-      <p
-      onClick={() => { this.setState({ activePage: 'Meetings' }); }}
-      className={this.state.activePage === 'Meetings' ? 'gradientText bottomPadding' : 'bottomPadding'}
-      >
-      Meetings Forms
-      </p>
-      <p
-      onClick={() => { this.setState({ activePage: 'Programming' }); }}
-      className={this.state.activePage === 'Programming' ? 'gradientText bottomPadding' : 'bottomPadding'}
-      >
-      Programming Calendar
       </p>
       <p
       onClick={() => { this.setState({ activePage: 'fullcal' }); }}
