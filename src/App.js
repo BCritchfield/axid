@@ -138,7 +138,7 @@ class App extends Component {
 
     {this.state.activePage === 'fullcal'
       ? <div style = {{backgroundColor: 'white', padding: '20px', display: 'flex', alignItems: 'center', justifyContent:'center'}} >
-      <iframe title="fullcal" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=dDhjZGZobW5qNTdndWQyMHNpOHAxMm01dXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%233F51B5&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" style={{borderWidth:'0'}} width="800" height="600" frameBorder="0" scrolling="no"></iframe></div>
+      <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=N2kwdmhiMzVlZjVobDlydGI0dnBxdW5vdTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%2330487E&amp;color=%23227F63&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" title="calendar" width="800" height="600" frameborder="0" scrolling="no"></iframe></div>
       : <div />
     }
 
